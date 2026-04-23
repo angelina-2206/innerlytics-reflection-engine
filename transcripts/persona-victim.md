@@ -9,59 +9,54 @@ Good evening. Let’s take a moment to reflect on your day.
 
 ---
 
-### Q1: How would you describe your day overall?
-**Answer:** Tough
+### Q1: When something didn’t go as planned today, what was your first reaction?
+**Answer:** I felt frustrated by things outside my control
 
 ---
 
-### Q2: When things didn’t go as planned, what was your instinct?
-**Answer:** Blame circumstances
+### Q2: It’s draining when things feel out of our hands. How did you handle that feeling?
+**Answer:** I voiced my frustration to others
 
 ---
 
 ### Reflection (Axis 1)
-It felt like things were happening to you. That’s natural—but somewhere in there, you made choices too.
+A tough day pulls attention outward — to what others did or didn't do. Fair enough. But finding even a sliver of choice can reduce that stress tomorrow.
 
----
-
-### Bridge → Axis 2
+*(Transition Bridge)*
 Now let’s shift from how you handled things — to what you contributed.
 
 ---
 
-### Q3: Which moment best reflects your contribution today?
-**Answer:** I felt others didn’t do enough
+### Q3: Think about an interaction you had today. Which statement feels most accurate?
+**Answer:** I did my job, but felt underappreciated
 
 ---
 
-### Q4: What frustrated you most?
-**Answer:** Others not contributing
+### Q4: When we feel underappreciated or heavily burdened, our focus narrows. Today, were you focused on what you lacked or what you gave?
+**Answer:** I was focused on the recognition I wasn't getting
 
 ---
 
 ### Reflection (Axis 2)
-It’s natural to expect fairness—but growth often starts by shifting focus to what you can offer.
+It’s natural to expect fairness—but waiting for others to 'make it right' limits your own impact. True growth often starts by shifting focus back to what you can offer.
+
+*(Transition Bridge)*
+Let’s expand the lens one final time — beyond the tasks, to the people around you.
 
 ---
 
-### Bridge → Axis 3
-Let’s expand the lens — beyond tasks, to people.
-
----
-
-### Q5: When you think about today’s biggest challenge, who comes to mind?
-**Answer:** Just me
+### Q5: Think about the most stressful moment today. Who were you optimizing for?
+**Answer:** Myself — I just needed to survive the day
 
 ---
 
 ### Reflection (Axis 3)
-You carried the day mostly on your own perspective. Expanding it might reduce pressure.
+Survival mode narrows our vision. You carried the day entirely on your own shoulders. Expanding your radius of concern next time might actually reduce the pressure.
 
 ---
 
 ### SUMMARY
-Today, you leaned toward **external** in agency, **entitlement** in contribution, and **self-focused** in perspective.  
-There may be more control and influence in your actions than it felt in the moment.
+Today you felt that 'I felt frustrated by things outside my control'. By maintaining a(n) external locus of control and a(n) entitlement orientation, you directly shape your environment. In the heat of the moment, your focus ended up self-centric. Awareness is the first step toward intentional change.
 
 ---
 

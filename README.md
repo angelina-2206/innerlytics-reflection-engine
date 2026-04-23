@@ -77,15 +77,15 @@ python innerlytics_agent.py
 ## Example Flow
 
 Input:
-- Tough day  
-- External reaction  
-- Entitlement orientation  
-- Self-focused perspective  
+- Resistance to unexpected events
+- Outward frustration  
+- Narrowed focus to lack  
+- Survival mode  
 
 Output:
-- Reflection highlighting lack of perceived control  
-- Shift toward contribution  
-- Expanded awareness toward others  
+- Reflection emphasizing hidden choices  
+- Shift from expectation to contribution  
+- Expansion of perspective beyond the self
 
 ---
 
