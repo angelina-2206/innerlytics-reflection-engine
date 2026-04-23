@@ -84,6 +84,23 @@ class InnerlyticsAgent:
         return None
 
     # -------------------------
+    # String Interpolation
+    # -------------------------
+    def interpolate_text(self, text):
+        import re
+        # replace answer placeholders
+        matches = re.findall(r"\{([\w_]+)\.answer\}", text)
+        for node_id in matches:
+            val = self.state["answers"].get(node_id, "")
+            text = text.replace(f"{{{node_id}.answer}}", val)
+            
+        # replace dominant placeholders
+        text = text.replace("{axis1.dominant}", self.get_dominant("axis1"))
+        text = text.replace("{axis2.dominant}", self.get_dominant("axis2"))
+        text = text.replace("{axis3.dominant}", self.get_dominant("axis3"))
+        return text
+
+    # -------------------------
     # Run Engine
     # -------------------------
     def run(self):
@@ -96,7 +113,7 @@ class InnerlyticsAgent:
 
             # START / BRIDGE / REFLECTION
             if node_type in ["start", "bridge", "reflection"]:
-                self.display(node["text"])
+                self.display(self.interpolate_text(node["text"]))
                 self.apply_signal(node.get("signal"))
 
                 # bridge override
@@ -107,6 +124,7 @@ class InnerlyticsAgent:
 
             # QUESTION
             elif node_type == "question":
+                node["text"] = self.interpolate_text(node["text"])
                 answer = self.ask_question(node)
                 prev_answer = answer
                 self.apply_signal(node.get("signal"))
@@ -118,28 +136,18 @@ class InnerlyticsAgent:
 
             # SUMMARY
             elif node_type == "summary":
-                summary = node["text"]
-
-                # replace placeholders
-                summary = summary.replace(
-                    "{axis1.dominant}",
-                    self.get_dominant("axis1")
-                )
-                summary = summary.replace(
-                    "{axis2.dominant}",
-                    self.get_dominant("axis2")
-                )
-                summary = summary.replace(
-                    "{axis3.dominant}",
-                    self.get_dominant("axis3")
-                )
-
+                summary = self.interpolate_text(node["text"])
                 self.display(summary)
-                current_id = self.get_next_node(current_id)
+                
+                # allow target override for summary
+                if "target" in node:
+                    current_id = node["target"]
+                else:
+                    current_id = self.get_next_node(current_id)
 
             # END
             elif node_type == "end":
-                self.display(node["text"])
+                self.display(self.interpolate_text(node["text"]))
                 break
 
             else:
