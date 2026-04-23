@@ -1,0 +1,252 @@
+{
+  "nodes": [
+
+    { "id": "START", "type": "start", "text": "Good evening. Let’s take a moment to reflect on your day." },
+
+    {
+      "id": "A1_OPEN",
+      "parentId": "START",
+      "type": "question",
+      "text": "How would you describe your day overall?",
+      "options": ["Productive", "Tough", "Mixed", "Frustrating"]
+    },
+
+    {
+      "id": "A1_DECISION_1",
+      "parentId": "A1_OPEN",
+      "type": "decision",
+      "rules": [
+        { "if": ["Productive", "Mixed"], "goto": "A1_Q_AGENCY_HIGH" },
+        { "if": ["Tough", "Frustrating"], "goto": "A1_Q_AGENCY_LOW" }
+      ]
+    },
+
+    {
+      "id": "A1_Q_AGENCY_HIGH",
+      "parentId": "A1_DECISION_1",
+      "type": "question",
+      "text": "When things went well, what made it happen?",
+      "options": [
+        "I planned and executed well",
+        "I adapted quickly",
+        "The team supported me",
+        "It just worked out"
+      ]
+    },
+
+    {
+      "id": "A1_Q_AGENCY_LOW",
+      "parentId": "A1_DECISION_1",
+      "type": "question",
+      "text": "When things didn’t go as planned, what was your instinct?",
+      "options": [
+        "Look for what I could control",
+        "Wait for help",
+        "Feel stuck",
+        "Blame circumstances"
+      ]
+    },
+
+    {
+      "id": "A1_DECISION_2",
+      "parentId": "A1_Q_AGENCY_HIGH",
+      "type": "decision",
+      "rules": [
+        { "if": ["I planned and executed well", "I adapted quickly"], "goto": "A1_REFLECT_INTERNAL" },
+        { "if": ["The team supported me", "It just worked out"], "goto": "A1_REFLECT_MIXED" }
+      ]
+    },
+
+    {
+      "id": "A1_DECISION_3",
+      "parentId": "A1_Q_AGENCY_LOW",
+      "type": "decision",
+      "rules": [
+        { "if": ["Look for what I could control"], "goto": "A1_REFLECT_RECOVERY" },
+        { "if": ["Wait for help", "Feel stuck", "Blame circumstances"], "goto": "A1_REFLECT_EXTERNAL" }
+      ]
+    },
+
+    {
+      "id": "A1_REFLECT_INTERNAL",
+      "parentId": "A1_DECISION_2",
+      "type": "reflection",
+      "text": "You actively shaped outcomes today. That’s a strong internal locus — you stayed in the driver’s seat.",
+      "signal": "axis1:internal"
+    },
+
+    {
+      "id": "A1_REFLECT_MIXED",
+      "parentId": "A1_DECISION_2",
+      "type": "reflection",
+      "text": "Some things worked in your favor, but your response still mattered. There’s more agency here than it seems.",
+      "signal": "axis1:internal"
+    },
+
+    {
+      "id": "A1_REFLECT_RECOVERY",
+      "parentId": "A1_DECISION_3",
+      "type": "reflection",
+      "text": "Even in difficulty, you searched for control. That’s where growth begins.",
+      "signal": "axis1:internal"
+    },
+
+    {
+      "id": "A1_REFLECT_EXTERNAL",
+      "parentId": "A1_DECISION_3",
+      "type": "reflection",
+      "text": "It felt like things were happening to you. That’s natural—but somewhere in there, you made choices too.",
+      "signal": "axis1:external"
+    },
+
+    {
+      "id": "BRIDGE_1_2",
+      "parentId": "A1_REFLECT_INTERNAL",
+      "type": "bridge",
+      "text": "Now let’s shift from how you handled things — to what you contributed.",
+      "target": "A2_OPEN"
+    },
+
+    {
+      "id": "A2_OPEN",
+      "type": "question",
+      "text": "Which moment best reflects your contribution today?",
+      "options": [
+        "I helped someone",
+        "I went beyond my task",
+        "I expected recognition",
+        "I felt others didn’t do enough"
+      ]
+    },
+
+    {
+      "id": "A2_DECISION_1",
+      "parentId": "A2_OPEN",
+      "type": "decision",
+      "rules": [
+        { "if": ["I helped someone", "I went beyond my task"], "goto": "A2_Q_CONTRIB" },
+        { "if": ["I expected recognition", "I felt others didn’t do enough"], "goto": "A2_Q_ENTITLE" }
+      ]
+    },
+
+    {
+      "id": "A2_Q_CONTRIB",
+      "parentId": "A2_DECISION_1",
+      "type": "question",
+      "text": "What drove you to contribute?",
+      "options": [
+        "I wanted to help",
+        "It felt right",
+        "I enjoy supporting others",
+        "It was necessary"
+      ]
+    },
+
+    {
+      "id": "A2_Q_ENTITLE",
+      "parentId": "A2_DECISION_1",
+      "type": "question",
+      "text": "What frustrated you most?",
+      "options": [
+        "Lack of recognition",
+        "Others not contributing",
+        "Unfair workload",
+        "Feeling overlooked"
+      ]
+    },
+
+    {
+      "id": "A2_REFLECT_CONTRIB",
+      "parentId": "A2_Q_CONTRIB",
+      "type": "reflection",
+      "text": "You focused on what you could give. Contribution builds value beyond immediate rewards.",
+      "signal": "axis2:contribution"
+    },
+
+    {
+      "id": "A2_REFLECT_ENTITLE",
+      "parentId": "A2_Q_ENTITLE",
+      "type": "reflection",
+      "text": "It’s natural to expect fairness—but growth often starts by shifting focus to what you can offer.",
+      "signal": "axis2:entitlement"
+    },
+
+    {
+      "id": "BRIDGE_2_3",
+      "parentId": "A2_REFLECT_CONTRIB",
+      "type": "bridge",
+      "text": "Let’s expand the lens — beyond tasks, to people.",
+      "target": "A3_OPEN"
+    },
+
+    {
+      "id": "A3_OPEN",
+      "type": "question",
+      "text": "When you think about today’s biggest challenge, who comes to mind?",
+      "options": [
+        "Just me",
+        "My team",
+        "A colleague",
+        "The end user"
+      ]
+    },
+
+    {
+      "id": "A3_DECISION_1",
+      "parentId": "A3_OPEN",
+      "type": "decision",
+      "rules": [
+        { "if": ["Just me"], "goto": "A3_REFLECT_SELF" },
+        { "if": ["My team"], "goto": "A3_REFLECT_TEAM" },
+        { "if": ["A colleague"], "goto": "A3_REFLECT_COLLEAGUE" },
+        { "if": ["The end user"], "goto": "A3_REFLECT_ALTRO" }
+      ]
+    },
+
+    {
+      "id": "A3_REFLECT_SELF",
+      "parentId": "A3_DECISION_1",
+      "type": "reflection",
+      "text": "You carried the day mostly on your own perspective. Expanding it might reduce pressure.",
+      "signal": "axis3:self"
+    },
+
+    {
+      "id": "A3_REFLECT_TEAM",
+      "parentId": "A3_DECISION_1",
+      "type": "reflection",
+      "text": "You saw the shared nature of the challenge. That awareness strengthens collaboration.",
+      "signal": "axis3:team"
+    },
+
+    {
+      "id": "A3_REFLECT_COLLEAGUE",
+      "parentId": "A3_DECISION_1",
+      "type": "reflection",
+      "text": "You considered another person’s experience. That’s a shift toward empathy.",
+      "signal": "axis3:altrocentric"
+    },
+
+    {
+      "id": "A3_REFLECT_ALTRO",
+      "parentId": "A3_DECISION_1",
+      "type": "reflection",
+      "text": "You connected your work to a larger purpose. That’s where meaning deepens.",
+      "signal": "axis3:altrocentric"
+    },
+
+    {
+      "id": "SUMMARY",
+      "type": "summary",
+      "text": "Today, you leaned toward {axis1.dominant} in agency, {axis2.dominant} in contribution, and {axis3.dominant} in perspective. Awareness is the first step toward intentional change."
+    },
+
+    {
+      "id": "END",
+      "parentId": "SUMMARY",
+      "type": "end",
+      "text": "See you tomorrow."
+    }
+
+  ]
+}
