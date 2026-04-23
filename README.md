@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🔮 Innerlytics
+# Innerlytics
 
 ### Deterministic Reflection Engine
 
@@ -17,9 +17,9 @@
 
 ---
 
-## 🧠 What Is This?
+## What Is This?
 
-Innerlytics is an end-of-day **reflection engine** that walks employees through a structured conversation using a fully deterministic decision tree. It encodes psychological frameworks — Locus of Control, Organizational Citizenship, Self-Transcendence — into a branching system that guides self-discovery without moralizing, scoring, or generating text.
+Innerlytics is an end-of-day **reflection engine** that walks employees through a structured conversation using a fully deterministic decision tree. It encodes psychological frameworks- Locus of Control, Organizational Citizenship, Self-Transcendence - into a branching system that guides self-discovery without moralizing, scoring, or generating text.
 
 > **The tree is the product. The intelligence is encoded in the structure, not in a model.**
 
@@ -27,7 +27,7 @@ This project was built as a submission for the [DeepThought CultureTech — Dete
 
 ---
 
-## 🎯 The Three Axes
+## The Three Axes
 
 The reflection progresses sequentially through three psychological dimensions:
 
@@ -41,7 +41,7 @@ Each axis builds on the previous — agency enables contribution, contribution w
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### System Design
 
@@ -87,7 +87,7 @@ Each axis builds on the previous — agency enables contribution, contribution w
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 innerlytics/
@@ -109,7 +109,7 @@ innerlytics/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -127,7 +127,7 @@ The agent loads `reflection-tree.json`, walks you through 5–7 questions across
 
 ---
 
-## 🔒 Guardrails
+## Guardrails
 
 | Principle | Implementation |
 |:----------|:---------------|
@@ -140,9 +140,9 @@ The agent loads `reflection-tree.json`, walks you through 5–7 questions across
 
 ---
 
-## 🔬 How Signals Work
+## How Signals Work
 
-As the employee answers questions, each reflection node emits a **signal** that accumulates in state:
+As the employee answers questions, each reflection node emits a **signal** that accumulates in the state:
 
 ```
 axis1:internal   →  state["signals"]["axis1"]["internal"] += 1
@@ -157,7 +157,7 @@ At the summary node, the engine resolves `{axis1.dominant}` to whichever pole re
 
 ---
 
-## 🗺️ Tree Diagram
+## Tree Diagram
 
 The full branching structure is visualized here:
 👉 **[View Interactive Mermaid Diagram](./tree/tree-diagram.md)**
@@ -200,7 +200,7 @@ START
 
 ---
 
-## 📝 Sample Paths
+## Sample Paths
 
 Two complete transcripts demonstrate divergent journeys through the tree:
 
@@ -220,7 +220,7 @@ The full write-up explaining question design, branching trade-offs, and psycholo
 
 ---
 
-## 🧩 Key Design Decisions
+## Key Design Decisions
 
 | Decision | Rationale |
 |:---------|:----------|
@@ -231,7 +231,7 @@ The full write-up explaining question design, branching trade-offs, and psycholo
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 | Component | Technology |
 |:----------|:-----------|
@@ -242,7 +242,7 @@ The full write-up explaining question design, branching trade-offs, and psycholo
 
 ---
 
-## 👤 Author
+## Author
 
 **Angelina Chatterjee**
 
